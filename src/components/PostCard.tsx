@@ -11,10 +11,10 @@ interface PostCardProps {
 
 const PostCard: React.FC<PostCardProps> = ({ id, title, desc, category }) => {
   return (
-    <div className='border p-4 rounded-lg shadow-md bg-white'>
+    <div className='border p-4 rounded-lg shadow-md bg-white h-96'>
       <span className='text-blue-500 text-sm font-semibold'>{category}</span>
-      <h2 className='text-gray-800 text-xl font-bold mt-2'>{title}</h2>
-      <p className='text-gray-600 mt-2'>{desc}</p>
+      <h2 className='text-gray-800 text-xl font-bold mt-2 '>{title}</h2>
+      <p className='text-gray-600 mt-2 '>{desc}</p>
       <div className='flex justify-between items-center mt-4'>
         <Link href={`/post/${id}`} className='text-blue-500'>Zobacz więcej →</Link>
         <FavoriteButton postId={id} />

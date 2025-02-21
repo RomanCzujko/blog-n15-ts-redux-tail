@@ -19,3 +19,6 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+.swiper-wrapper {
+  max-height: 100vh;
+}
