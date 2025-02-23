@@ -21,4 +21,26 @@ body {
 }
 .swiper-wrapper {
   max-height: 100vh;
+  padding: 15px 0 15px 0;
+}
+
+/* Scale PostCard on hover */
+.post-card {
+  transition: transform 0.3s ease-in-out;
+}
+.post-card:hover {
+  transform: scaleY(1.03);
+}
+
+/* Hide slider arrows by default */
+.swiper-button-prev,
+.swiper-button-next {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show arrows on hover */
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  opacity: 1 !important;
 }

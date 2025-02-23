@@ -7,24 +7,28 @@ const categories = [
  { name: 'Dostępne', color: 'bg-green-500', icon: '🔓' },
 ];
 
+interface CategoriesProps {
+  onCategorySelect: (category: string | null) => void;
+}
 
-const Categories = () => {
- return (
-  <>
-   <h2 className='text-2xl font-bold mb-6'>Kategorie</h2>
-   <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 py-6'>
-    {categories.map((category) => (
-     <div
-      key={category.name}
-      className={`p-6 rounded-lg text-white ${category.color}`}
-     >
-      <span className='text-3xl'>{category.icon}</span>
-      <h2 className='mt-2 font-bold text-lg'>{category.name}</h2>
-     </div>
-    ))}
-   </div>
-  </>
- );
+const Categories: React.FC<CategoriesProps> = ({ onCategorySelect }) => {
+  return (
+    <>
+      <h2 className='text-2xl font-bold mb-6'>Kategorie</h2>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 py-6'>
+        {categories.map((category) => (
+          <div
+            key={category.name}
+            onClick={() => onCategorySelect(category.name)}
+            className={`p-6 rounded-lg text-white cursor-pointer ${category.color}`}
+          >
+            <span className='text-3xl'>{category.icon}</span>
+            <h2 className='mt-2 font-bold text-lg'>{category.name}</h2>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Categories;
