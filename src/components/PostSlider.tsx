@@ -29,7 +29,7 @@ const PostSlider: React.FC<SliderProps> = ({ posts, isLoading }) => {
   }, []);
 
   if (isMobile === null) {
-    return <div className="text-center text-gray-500">Checking screen size...</div>; // Prevent flickering
+    return <></>
   }
 
   if (isMobile) {

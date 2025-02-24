@@ -62,6 +62,7 @@ const Categories: React.FC<CategoriesProps> = ({ onCategorySelect }) => {
           width={47}
           height={47}
           className='mb-2'
+          priority
          />
          <h3
           className='mt-2 font-bold text-sm uppercase'
