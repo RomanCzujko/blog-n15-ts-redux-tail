@@ -26,9 +26,9 @@ const PostDetail = () => {
   <div className='container mx-auto'>
     <Header />
   <div className='container mx-auto main-section lg:pt-0'>
-   <div className='flex justify-between lg:mb-20'>
+   <div className='lg:flex justify-between lg:mb-20 lg:items-center '>
     <Link href='/' >
-    <h2 className='font-bold lg:text-3xl'>← Blog Edukacyjny</h2>
+    <h2 className='font-bold lg:text-3xl text-2xl lg:mb-0 mb-4'>← Blog Edukacyjny</h2>
      
     </Link>{' '}
     <FavoriteButton postId={post.id} />
@@ -36,7 +36,7 @@ const PostDetail = () => {
 
    <h1 className='lg:text-3xl text-2xl font-bold mt-6'>{post.title}</h1>
    <p className='mt-6'>{post.body}</p>
-   <div className='mt-6 flex justify-between items-center'></div>
+   
    <Image
     src={categories[0].image}
     alt={categories[0].name}

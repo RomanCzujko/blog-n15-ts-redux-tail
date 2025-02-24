@@ -13,11 +13,11 @@ const FavoriteButton = ({ postId }: { postId: number }) => {
   return (
     <div>
     <button 
-      className={` lg:text-3xl text-xl flex items-center`} 
+      className={` text-3xl  flex items-center`} 
       onClick={() => dispatch(toggleFavorite(postId))}
     >
       {isFavorite ? '★' : '☆'} 
-      <p className='lg:text-xl text-sm  lg:pl-4 pl-2'> {isFavorite?'polubiłeś to' : 'dodaj do ulubionych'}</p>
+      <p className='text-xl  lg:pl-4 pl-2'> {isFavorite?'polubiłeś to' : 'dodaj do ulubionych'}</p>
       
     </button> 
     
