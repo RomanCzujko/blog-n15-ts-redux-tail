@@ -77,10 +77,10 @@ const HomePage = () => {
     <div className='flex lg:justify-between items-center'>
      <h2 className='lg:text-2xl text-xl font-bold pr-6 '>Wpisy</h2>
      <h3 className='lg:text-l text-s  cursor-pointer opacity-100 text-red-800 underline decoration-2 font-bold pr-4'>
-      {selectedCategory}{' '}
+      {selectedCategory}{' '}{selectedCategory&&`(${displayedPosts.length})`}
      </h3>
      <span className='text-l  cursor-pointer' onClick={showAllPosts}>
-      {selectedCategory && '✕'}
+      {selectedCategory  && '✕'}
      </span>
     </div>
 
@@ -93,7 +93,7 @@ const HomePage = () => {
       }`}
       onClick={showAllPosts}
      >
-      Wszystkie
+      Wszystkie ({posts.length})
      </a>
      <span className='px-4 opacity-50 text-black-800'>/</span>
      <a
@@ -104,7 +104,7 @@ const HomePage = () => {
       }`}
       onClick={toggleFavorites}
      >
-      Ulubione
+      Ulubione ({favoritePosts.length})
      </a>
     </div>
    </div>
