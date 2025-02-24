@@ -14,15 +14,23 @@ interface SliderProps {
 }
 
 const PostSlider: React.FC<SliderProps> = ({ posts, isLoading }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const mediaQuery = window.matchMedia('(max-width: 767px)'); 
+    setIsMobile(mediaQuery.matches); 
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
+
+  if (isMobile === null) {
+    return <div className="text-center text-gray-500">Checking screen size...</div>; // Prevent flickering
+  }
 
   if (isMobile) {
     return (
@@ -51,11 +59,7 @@ const PostSlider: React.FC<SliderProps> = ({ posts, isLoading }) => {
       slidesPerView={4}
       loop={true}
       pagination={{ clickable: true, type: 'fraction' }}
-      breakpoints={{
-        100: { slidesPerView: 1, direction: 'vertical' },
-        1024: { slidesPerView: 4, direction: 'horizontal' }
-      }}
-      id='post-slider'
+      id="post-slider"
     >
       {isLoading
         ? Array(4)

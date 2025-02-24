@@ -24,7 +24,7 @@ const Categories: React.FC<CategoriesProps> = ({ onCategorySelect }) => {
     pagination={{ clickable: true }}
     navigation={true}
     breakpoints={{
-     100: { slidesPerView: 1, direction: 'horizontal' },
+     0: { slidesPerView: 1, direction: 'horizontal' },
      1024: { slidesPerView: 4, direction: 'horizontal' },
     }}
     id='category-slider'

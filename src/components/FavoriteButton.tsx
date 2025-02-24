@@ -4,18 +4,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '@/features/favoritesSlice';
 import { RootState } from '@/store/store';
 
+
 const FavoriteButton = ({ postId }: { postId: number }) => {
   const dispatch = useDispatch();
   const favorites = useSelector((state: RootState) => state.favorites.favorites);
   const isFavorite = favorites.includes(postId);
 
   return (
+    <div>
     <button 
-      className={`p-2 rounded ${isFavorite ? 'bg-red-500' : 'bg-gray-300'}`} 
+      className={` text-3xl flex items-center`} 
       onClick={() => dispatch(toggleFavorite(postId))}
     >
-      {isFavorite ? '★' : '☆'}
-    </button>
+      {isFavorite ? '★' : '☆'} 
+      <p className='text-xl pl-4'> {isFavorite?'polubiłeś to' : 'dodaj do ulubionych'}</p>
+      
+    </button> 
+    
+    </div>
   );
 };
 
