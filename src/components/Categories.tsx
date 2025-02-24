@@ -14,7 +14,7 @@ interface CategoriesProps {
 
 const Categories: React.FC<CategoriesProps> = ({ onCategorySelect }) => {
  return (
-  <div className='bg-gray-100 main-section p-6 '>
+  <div className='bg-gray-100 main-section p-6 ' style={{overflow: 'hidden'}}>
    <h2 className='text-2xl font-bold mb-20'>Kategorie</h2>
    <Swiper
     spaceBetween={40}
