@@ -7,24 +7,74 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --swiper-pagination-bottom: auto;
+  --swiper-pagination-top: -60px;
+}
+
+:root {
+  --swiper-pagination-color: #000!important;
+  --swiper-pagination-bullet-size: 16px;
+  --swiper-pagination-bullet-width: 16px;
+  --swiper-pagination-bullet-height: 16px;
+  --swiper-pagination-bullet-color: #000;
+  --swiper-pagination-bullet-inactive-opacity: 0.2;
+  --swiper-pagination-bullet-inactive-border: 1;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
+  --swiper-pagination-bullet-vertical-gap: 6px;
+ 
+}
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-.swiper-wrapper {
-  max-height: 100vh;
-  padding: 15px 0 15px 0;
+
+h1 {
+  font-family: var(--font-open-sans), sans-serif;
+  font-weight: 600; 
+  color: #363B5C;
+}
+h2  {
+  font-family: var(--font-open-sans), sans-serif;
+  font-weight: 400; 
+  color: #363B5C;
 }
 
-/* Scale PostCard on hover */
+header h1 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600; 
+}
+header h2 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400; 
+}
+
+.main-section {
+  padding: 80px;
+}
+
+#post-slider .swiper-wrapper {
+  padding: 15px 0;
+}
+
+#category-slider  {
+  overflow: visible;
+}
+/* #category-slider .swiper-pagination{
+  top: -50px;
+  
+} */
+
 .post-card {
   transition: transform 0.3s ease-in-out;
 }
@@ -32,15 +82,29 @@ body {
   transform: scaleY(1.03);
 }
 
-/* Hide slider arrows by default */
+.swiper-pagination-fraction {
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 20px;
+  position: relative;
+}
+
+
 .swiper-button-prev,
 .swiper-button-next {
   opacity: 0 !important;
   transition: opacity 0.3s ease-in-out;
+  color: #000 !important;
 }
 
 /* Show arrows on hover */
 .swiper:hover .swiper-button-prev,
 .swiper:hover .swiper-button-next {
   opacity: 1 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-section {
+    padding: 20px ;
+  }
 }

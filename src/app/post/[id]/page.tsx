@@ -1,32 +1,31 @@
 'use client';
 import React from 'react';
 import { useParams } from 'next/navigation';
-import { useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
+import { useFetchPosts } from '@/hooks/useFetchPosts';
 import Link from 'next/link';
-import AppProvider from '@/components/AppProvider';
+import FavoriteButton from '@/components/FavoriteButton';
 
 const PostDetail = () => {
-  return (
-    <AppProvider>
-      <PostContent />
-    </AppProvider>
-  );
-};
-
-const PostContent = () => {
+  const { posts, status } = useFetchPosts(); 
   const { id } = useParams();
-  const post = useSelector((state: RootState) => state.posts.posts.find((p) => p.id === Number(id)));
 
-  if (!post) {
-    return <p className='text-center mt-10 text-red-500'>Post not found</p>;
+  const postId = Number(id);
+  const post = posts.find((p) => p.id === postId);
+
+  if (status === 'loading' || !posts.length) {
+    return <p className='text-center mt-10 text-gray-500'>Loading...</p>;
   }
+
+  if (!post) return <p className='text-center mt-10 text-red-500'>Post not found</p>;
 
   return (
     <div className='container mx-auto p-4'>
       <h1 className='text-3xl font-bold'>{post.title}</h1>
       <p className='mt-4'>{post.body}</p>
-      <Link href='/' className='block mt-6 text-blue-500'>← Back to Home</Link>
+      <div className='mt-6 flex justify-between items-center'>
+        <Link href='/' className='text-blue-500'>← Back to Home</Link>
+        <FavoriteButton postId={post.id} />
+      </div>
     </div>
   );
 };
