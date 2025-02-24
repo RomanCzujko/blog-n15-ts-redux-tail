@@ -28,14 +28,14 @@ const PostDetail = () => {
   <div className='container mx-auto main-section lg:pt-0'>
    <div className='flex justify-between lg:mb-20'>
     <Link href='/' >
-    <h2 className='font-bold text-3xl'>← Blog Edukacyjny</h2>
+    <h2 className='font-bold lg:text-3xl'>← Blog Edukacyjny</h2>
      
     </Link>{' '}
     <FavoriteButton postId={post.id} />
    </div>
 
-   <h1 className='text-3xl font-bold'>{post.title}</h1>
-   <p className='mt-4'>{post.body}</p>
+   <h1 className='lg:text-3xl text-2xl font-bold mt-6'>{post.title}</h1>
+   <p className='mt-6'>{post.body}</p>
    <div className='mt-6 flex justify-between items-center'></div>
    <Image
     src={categories[0].image}
