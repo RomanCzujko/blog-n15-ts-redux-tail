@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pl" className={`${poppins.variable} ${openSans.variable}`}>
       <body >
-        <AppProvider> {/* ✅ Now wrapping the whole app */}
+        <AppProvider> 
           {children}
         </AppProvider>
       </body>
