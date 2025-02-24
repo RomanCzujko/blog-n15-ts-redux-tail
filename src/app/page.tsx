@@ -76,7 +76,7 @@ const HomePage = () => {
    <div className='lg:flex lg:justify-between lg:px-20 lg:mt-20 px-5 mt-5 grid grid-cols-1 '>
     <div className='flex lg:justify-between items-center'>
      <h2 className='lg:text-2xl text-xl font-bold pr-6 '>Wpisy</h2>
-     <h3 className='lg:text-l text-s  cursor-pointer opacity-100 text-red-800 underline decoration-2 font-bold pr-4'>
+     <h3 className='lg:text-l text-s mt-1  cursor-pointer opacity-100 text-red-800 underline decoration-2 font-bold pr-4'>
       {selectedCategory}{' '}{selectedCategory&&`(${displayedPosts.length})`}
      </h3>
      <span className='text-l  cursor-pointer' onClick={showAllPosts}>
