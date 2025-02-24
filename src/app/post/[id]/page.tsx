@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, notFound } from 'next/navigation';
 import { useFetchPosts } from '@/hooks/useFetchPosts';
 import Link from 'next/link';
 import FavoriteButton from '@/components/FavoriteButton';
@@ -19,8 +19,10 @@ const PostDetail = () => {
   return <p className='text-center mt-10 text-gray-500'>Loading...</p>;
  }
 
- if (!post)
-  return <p className='text-center mt-10 text-red-500'>Post not found</p>;
+ if (!post) {
+  notFound(); 
+  return null; 
+}
 
  return (
   <div className='container mx-auto'>
