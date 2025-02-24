@@ -68,7 +68,8 @@ header h2 {
 }
 
 #category-slider  {
-  overflow: visible;
+  overflow: unset;
+  
 }
 /* #category-slider .swiper-pagination{
   top: -50px;
