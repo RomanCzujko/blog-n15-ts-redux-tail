@@ -35,7 +35,7 @@ const PostDetail = () => {
    </div>
 
    <h1 className='lg:text-3xl text-2xl font-bold mt-6'>{post.title}</h1>
-   <p className='m-6'>{post.body}</p>
+   <p className='my-6'>{post.body}</p>
    
    <Image
     src={categories[0].image}
