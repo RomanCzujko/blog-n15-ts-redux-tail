@@ -7,6 +7,7 @@ import FavoriteButton from '@/components/FavoriteButton';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import categories from '../../../../public/DUMMY_DATA';
+import postIMg from '../../../../public/assets/img/post1.jpg'
 
 const PostDetail = () => {
  const { posts, status } = useFetchPosts();
@@ -30,7 +31,11 @@ const PostDetail = () => {
   <div className='container mx-auto main-section lg:pt-0'>
    <div className='lg:flex justify-between lg:mb-20 lg:items-center '>
     <Link href='/' >
-    <h2 className='font-bold lg:text-3xl text-2xl lg:mb-0 mb-4'>← Blog Edukacyjny</h2>
+    <div className='flex items-center'>
+    <p className='font-bold lg:text-3xl text-2xl lg:mb-0 mb-4 mr-2'>←</p>
+    <h2 className='font-bold lg:text-3xl text-2xl lg:mb-0 mb-4'>Blog Edukacyjny</h2>
+    </div>
+    
      
     </Link>{' '}
     <FavoriteButton postId={post.id} />
@@ -40,10 +45,10 @@ const PostDetail = () => {
    <p className='my-6'>{post.body}</p>
    
    <Image
-    src={categories[0].image}
+    src={postIMg}
     alt={categories[0].name}
-    width={500}
-    height={500}
+    width={1900}
+    style={{ borderTopLeftRadius: 60, borderBottomRightRadius: 60 }}
     />
   </div>
   </div>
